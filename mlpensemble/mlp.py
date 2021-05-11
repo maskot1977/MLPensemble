@@ -46,7 +46,7 @@ class Objective:
                 trial.suggest_int(str(i), self.mlp_n_neurons[0], self.mlp_n_neurons[1])
             )
 
-        params["hidden_layer_sizes"] = set(layers)
+        params["hidden_layer_sizes"] = layers
         params["max_iter"] = self.mlp_max_iter
         params["early_stopping"] = True
         params["warm_start"] = trial.suggest_categorical(
