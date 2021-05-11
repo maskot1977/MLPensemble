@@ -34,7 +34,7 @@ class Objective:
             self.is_regressor = True
         else:
             self.is_regressor = False
-        self.max_num_store_models = 5
+        self.max_num_store_models = 10
         self.best_score = None
         self.best_model = None
 
