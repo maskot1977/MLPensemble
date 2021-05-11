@@ -35,6 +35,8 @@ class Objective:
         else:
             self.is_regressor = False
         self.max_num_store_models = 5
+        self.best_score = None
+        self.best_model = None
 
     def generate_params(self, trial):
         params = {}
@@ -87,5 +89,9 @@ class Objective:
         for index, rank in enumerate(rankdata(-np.array(self.scores_history))):
             if rank > self.max_num_store_models:
                 self.models[index] = None
+
+        if self.best_score is None or self.best_score < score:
+            self.best_score = score
+            self.best_model = model
 
         return score
