@@ -7,12 +7,12 @@ from scipy.stats import rankdata
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier, MLPRegressor
 
-logger = getLogger(__name__)
-logger.setLevel(DEBUG)
 basicConfig(
     format="[%(asctime)s] %(name)s %(levelname)s: %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
+logger = getLogger(__name__)
+logger.setLevel(DEBUG)
 
 
 class Objective:
