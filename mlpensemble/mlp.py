@@ -24,6 +24,7 @@ class Objective:
         self.mlp_n_neurons = [4, 64]
         self.mlp_warm_start = [True, False]
         self.mlp_activation = ["identity", "logistic", "tanh", "relu"]
+        self.mlp_learning_rate = ["constant", "invscaling", "adaptive"]
         self.test_size = 0.4
         self.seconds_history = []
         self.scores_history = []
@@ -55,6 +56,10 @@ class Objective:
         params["activation"] = trial.suggest_categorical(
             "mlp_activation", self.mlp_activation
         )
+        params["learning_rate"] = trial.suggest_categorical(
+            "mlp_learning_rate", self.mlp_learning_rate
+        )
+
         return params
 
     def __call__(self, trial):
