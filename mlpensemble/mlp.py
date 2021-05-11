@@ -82,7 +82,7 @@ class Objective:
         seconds = timeit.timeit(lambda: model.fit(x_train, y_train), number=1)
         self.seconds_history.append(seconds)
         score = model.score(x_test, y_test)
-        logger.debug((trial.number, score, model))
+        #logger.debug((trial.number, score, model))
         self.scores_history.append(score)
         self.models[trial.number] = model
 
