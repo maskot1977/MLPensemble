@@ -21,7 +21,7 @@ class Objective:
         self.dataset_y = dataset_y  # .reshape(len(dataset_y), 1)
         self.mlp_max_iter = 530000
         self.mlp_n_layers = [1, 10]
-        self.mlp_n_neurons = [4, 64]
+        self.mlp_n_neurons = [4, 128]
         self.mlp_warm_start = [True, False]
         self.mlp_activation = ["identity", "logistic", "tanh", "relu"]
         self.mlp_learning_rate = ["constant", "invscaling", "adaptive"]
