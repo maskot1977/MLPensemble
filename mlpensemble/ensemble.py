@@ -73,7 +73,7 @@ class Objective:
                 if in_out == 1:
                     estimators.append(("model_" + str(index), model))
 
-        if len(estimators) == 0:
+        if len(estimators) < 2:
             return 0 - 530000
 
         if self.mlp_objective.is_regressor:
